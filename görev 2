@@ -8,23 +8,21 @@ buyuk_sayac = 0
 kucuk_sayac = 0
 
 # API'ye 100 istek gönder
-for istek_numarasi in range(100):
+for _ in range(100):
     try:
         # API'den rastgele görsel URL'si al
-        api_cevabi = requests.get(api_adresi)
-        api_cevabi.raise_for_status()
+        yanit = requests.get(api_adresi)
+        yanit.raise_for_status()
 
-        # Yanıtı JSON formatında al ve görsel URL'sini kontrol et
-        json_verisi = api_cevabi.json()
-        gorsel_url = json_verisi.get("url")
+        # JSON yanıtından URL'yi al
+        veri = yanit.json()
+        gorsel_url = veri.get("url")
 
         if gorsel_url:
-            # Görseli indir
-            gorsel_cevabi = requests.get(gorsel_url)
-            gorsel_cevabi.raise_for_status()
-
-            # Görsel boyutunu hesapla
-            gorsel_boyutu = len(gorsel_cevabi.content)
+            # Görseli indir ve boyutunu hesapla
+            gorsel_cevap = requests.get(gorsel_url)
+            gorsel_cevap.raise_for_status()
+            gorsel_boyutu = len(gorsel_cevap.content)
 
             # Boyutu kontrol et
             if gorsel_boyutu > 1_050_000:
@@ -32,11 +30,11 @@ for istek_numarasi in range(100):
             else:
                 kucuk_sayac += 1
         else:
-            print(f"Geçersiz veri alındı: {json_verisi}")
+            print("Geçersiz veri alındı:", veri)
 
     except requests.RequestException as hata:
-        print(f"Bir hata oluştu: {hata}")
+        print("Bir hata oluştu:", hata)
 
 # Sonuçları yazdır
 print(f"1.050.000 bayttan büyük olan yanıt sayısı: {buyuk_sayac}")
-print(f"1.050.000 bayttan küçük olan yanıt sayısı: {kucuk_sayac}")
+print(f"1.050.000 bayttan küçük olan yanıt sayısı: {kucuk_sayac}") .
