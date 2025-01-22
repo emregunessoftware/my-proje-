@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Developer Portfolio</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    /* Landing Page Styles */
+    .landing-page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                    url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3');
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .welcome-text {
+        font-size: 54px;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .enter-button {
+        padding: 15px 40px;
+        font-size: 20px;
+        background: linear-gradient(45deg, #6b3aff, #9c3fff);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(107, 58, 255, 0.3);
+    }
+
+    .enter-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(107, 58, 255, 0.5);
+    }
+
+    /* Main Content Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                    url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #e0e0e0;
+    }
+
+    .profile-container {
+        max-width: 900px;
+        margin: 50px auto;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 50px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .profile-name {
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #6b3aff, #9c3fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .profile-title {
+        text-align: center;
+        font-size: 24px;
+        color: #b8b8b8;
+        margin-top: 10px;
+        letter-spacing: 1px;
+    }
+
+    .section {
+        margin-top: 35px;
+        padding: 25px;
+        background: rgba(107, 58, 255, 0.05);
+        border-radius: 20px;
+        border: 1px solid rgba(107, 58, 255, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+        transform: translateY(-5px);
+    }
+
+    .section h2 {
+        color: #6b3aff;
+        margin-bottom: 20px;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .skill-item {
+        text-align: center;
+        padding: 15px;
+        background: rgba(107, 58, 255, 0.1);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(107, 58, 255, 0.2);
+    }
+
+    .skill-item:hover {
+        background: rgba(107, 58, 255, 0.2);
+        transform: translateY(-3px);
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 35px;
+    }
+
+    .social-links a {
+        color: #6b3aff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 15px 30px;
+        background: rgba(107, 58, 255, 0.1);
+        border-radius: 50px;
+        transition: all 0.3s;
+        border: 1px solid rgba(107, 58, 255, 0.2);
+    }
+
+    .social-links a:hover {
+        background: linear-gradient(45deg, #6b3aff, #9c3fff);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(107, 58, 255, 0.3);
+    }
+
+    .social-links i {
+        margin-right: 10px;
+        font-size: 20px;
+        transition: transform 0.5s;
+    }
+
+    .social-links a:hover i {
+        transform: rotate(360deg);
+    }
+
+    /* Responsive düzenlemeler */
+    @media (max-width: 768px) {
+        .profile-container {
+            margin: 20px;
+            padding: 30px;
+        }
+        
+        .welcome-text {
+            font-size: 36px;
+            padding: 0 20px;
+        }
+        
+        .social-links {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links a {
+            width: 80%;
+            text-align: center;
+        }
+
+        .profile-name {
+            font-size: 32px;
+        }
+
+        .section {
+            padding: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="landing-page">
+        <h1 class="welcome-text">Kişisel Websiteme Hoşgeldiniz</h1>
+        <button class="enter-button" onclick="showMainContent()">Siteye Giriş</button>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <div class="profile-container">
+            <h1 class="profile-name">EMRE GÜNEŞ</h1>
+            <p class="profile-title">Yazılım Geliştirici</p>
+            
+            <div class="section">
+                <h2>Kişisel Bilgiler</h2>
+                <p>Doğum Yeri: Muş</p>
+            </div>
+
+            <div class="section">
+                <h2>Eğitim Bilgileri</h2>
+                <div class="education-info">
+                    <p><strong>Doğu Akdeniz Üniversitesi</strong></p>
+                    <p>Yazılım Mühendisi</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Teknik Beceriler</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">CSS</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">Java</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Dil Yetkinlikleri</h2>
+                <p>Türkçe: Ana Dil</p>
+                <p>İngilizce: B2 (Upper Intermediate)</p>
+            </div>
+
+            <div class="section">
+                <h2>Projelerim</h2>
+                <p>Tüm projelerimi GitHub profilimde inceleyebilirsiniz!</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/emregunessoftware" target="_blank">
+                    <i class="fab fa-github"></i> GitHub Profilim
+                </a>
+                <a href="https://instagram.com/_emrecan0_" target="_blank">
+                    <i class="fab fa-instagram"></i> Beni Instagram'da Takip Et
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>Hakkımda</h2>
+                <p>JavaScript, HTML, CSS, Python ve Java dillerinde uzmanlığa sahip tutkulu bir yazılım geliştiricisiyim. 
+                Karmaşık problemlere verimli ve zarif çözümler üretmekten keyif alıyorum. 
+                B2 seviyesinde İngilizce bilgim ile uluslararası ortamlarda etkin iletişim kurabilir ve işbirliği yapabilirim.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMainContent() {
+            const landingPage = document.getElementById('landing-page');
+            const mainContent = document.getElementById('main-content');
+            
+            // Fade out landing page
+            landingPage.style.opacity = '0';
+            
+            // Show main content
+            mainContent.style.visibility = 'visible';
+            mainContent.style.opacity = '1';
+            
+            // After animation, hide landing page completely
+            setTimeout(() => {
+                landingPage.classList.add('hidden');
+            }, 500);
+        }
+    </script>
+</body>
+</html>
