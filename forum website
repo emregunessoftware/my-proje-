@@ -3,121 +3,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum - Simple Forum</title>
+    <title>Modern Forum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-      
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Forum Category Styles */
+        .forum-category {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .forum-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .forum-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Form Styles */
+        .form-container {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Forum Posts Styles */
+        .forum-post {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .forum-post:hover {
+            transform: translateY(-3px);
+        }
+
+        .forum-post h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .author {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .content {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .forum-category, .forum-post {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .forum-category, .forum-post, .form-container {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Simple Forum</h1>
+    <h1><i class="fas fa-comments"></i> Modern Forum</h1>
+    <p>Join the discussion today!</p>
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#contact">Contact</a>
+    <a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#categories"><i class="fas fa-list"></i> Categories</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
 <div class="container">
-    <!-- Forum Kategorileri -->
+    <!-- Forum Categories -->
     <div class="forum-category">
-        <h3>General Discussions</h3>
+        <h3><i class="fas fa-globe"></i> General Discussions</h3>
         <p class="author">Category: General</p>
         <p class="content">Talk about general topics here.</p>
-        <button>View Topics</button>
+        <button><i class="fas fa-arrow-right"></i> View Topics</button>
     </div>
 
     <div class="forum-category">
-        <h3>Technology</h3>
+        <h3><i class="fas fa-laptop-code"></i> Technology</h3>
         <p class="author">Category: Technology</p>
         <p class="content">Discuss the latest in tech.</p>
-        <button>View Topics</button>
+        <button><i class="fas fa-arrow-right"></i> View Topics</button>
     </div>
 
     <div class="forum-category">
-        <h3>Gaming</h3>
+        <h3><i class="fas fa-gamepad"></i> Gaming</h3>
         <p class="author">Category: Gaming</p>
         <p class="content">Share your gaming experiences.</p>
-        <button>View Topics</button>
+        <button><i class="fas fa-arrow-right"></i> View Topics</button>
     </div>
 
-    <!-- Kullanıcı Kaydı Formu -->
+    <!-- Registration Form -->
     <div class="form-container">
-        <h2>Register</h2>
+        <h2><i class="fas fa-user-plus"></i> Register</h2>
         <form id="registerForm">
             <input type="text" id="username" placeholder="Username" required>
             <input type="email" id="email" placeholder="Email" required>
             <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Register</button>
+            <button type="submit"><i class="fas fa-sign-in-alt"></i> Register</button>
         </form>
     </div>
 
-    <!-- Kullanıcı Girişi Formu -->
+    <!-- Login Form -->
     <div class="form-container">
-        <h2>Login</h2>
+        <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
         <form id="loginForm">
             <input type="text" id="loginUsername" placeholder="Username" required>
             <input type="password" id="loginPassword" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <button type="submit"><i class="fas fa-lock"></i> Login</button>
         </form>
     </div>
 
-    <!-- Forum Gönderileri -->
+    <!-- Forum Posts -->
     <div class="forum-posts">
         <div class="forum-post">
-            <h3>Forum Title 1</h3>
-            <p class="author">Posted by: User1</p>
-            <p class="content">This is the first forum post. Feel free to reply to it!</p>
-            <button>Reply</button>
+            <h3>Welcome to Our Community!</h3>
+            <p class="author"><i class="fas fa-user"></i> Posted by: Admin</p>
+            <p class="content">Welcome to our forum! Feel free to explore and join the discussions.</p>
+            <button><i class="fas fa-reply"></i> Reply</button>
         </div>
 
         <div class="forum-post">
-            <h3>Forum Title 2</h3>
-            <p class="author">Posted by: User2</p>
-            <p class="content">This is the second forum post. Let's discuss here!</p>
-            <button>Reply</button>
+            <h3>Tech News Discussion</h3>
+            <p class="author"><i class="fas fa-user"></i> Posted by: TechGuru</p>
+            <p class="content">Let's discuss the latest technology trends and news!</p>
+            <button><i class="fas fa-reply"></i> Reply</button>
         </div>
 
         <div class="forum-post">
-            <h3>Forum Title 3</h3>
-            <p class="author">Posted by: User3</p>
-            <p class="content">Welcome to the forum! Please share your thoughts here.</p>
-            <button>Reply</button>
+            <h3>Gaming Community Meet-up</h3>
+            <p class="author"><i class="fas fa-user"></i> Posted by: GameMaster</p>
+            <p class="content">Planning a virtual gaming tournament this weekend!</p>
+            <button><i class="fas fa-reply"></i> Reply</button>
         </div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2024 Simple Forum. All rights reserved.</p>
+    <p>&copy; 2024 Modern Forum. All rights reserved.</p>
 </footer>
-
 <script>
-    // Kullanıcı Kaydı Formu İşlemi
-    document.getElementById('registerForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Formun normal şekilde gönderilmesini engelle
-        let username = document.getElementById('username').value;
-        let email = document.getElementById('email').value;
-        let password = document.getElementById('password').value;
-
-        // Burada form verilerini işleyebilirsiniz (örneğin, alert ile göstermek)
-        alert('Registration successful for: ' + username);
-
-        // Formu temizle
-        document.getElementById('registerForm').reset();
+    // DOM elementlerini seçme
+    const registerForm = document.getElementById('registerForm');
+    const loginForm = document.getElementById('loginForm');
+    const forumPosts = document.querySelectorAll('.forum-post');
+    const categoryButtons = document.querySelectorAll('.forum-category button');
+    
+    // Kullanıcı verilerini tutmak için basit bir veritabanı simülasyonu
+    let users = [];
+    let isLoggedIn = false;
+    
+    // Kayıt formu işlemleri
+    registerForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+    
+        // Basit validasyon
+        if (password.length < 6) {
+            showAlert('Password must be at least 6 characters!', 'error');
+            return;
+        }
+    
+        // Kullanıcıyı kaydet
+        users.push({ username, email, password });
+        showAlert('Registration successful! Please login.', 'success');
+        registerForm.reset();
+    
+        // Kayıt formunu gizle ve login formunu göster
+        registerForm.parentElement.style.display = 'none';
+        loginForm.parentElement.style.display = 'block';
     });
-
-    // Kullanıcı Girişi Formu İşlemi
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Formun normal şekilde gönderilmesini engelle
-        let loginUsername = document.getElementById('loginUsername').value;
-        let loginPassword = document.getElementById('loginPassword').value;
-
-        // Burada giriş işlemi yapabilirsiniz (örneğin, alert ile göstermek)
-        alert('Login successful for: ' + loginUsername);
+    
+    // Login formu işlemleri
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+    
+        // Kullanıcı kontrolü
+        const user = users.find(u => u.username === username && u.password === password);
+        
+        if (user) {
+            isLoggedIn = true;
+            showAlert('Login successful! Welcome ' + username, 'success');
+            updateUIAfterLogin(username);
+            loginForm.reset();
+        } else {
+            showAlert('Invalid username or password!', 'error');
+        }
     });
-</script>
+    
+    // Forum post reply işlemleri
+    forumPosts.forEach(post => {
+        const replyButton = post.querySelector('button');
+        replyButton.addEventListener('click', function() {
+            if (!isLoggedIn) {
+                showAlert('Please login to reply!', 'error');
+                return;
+            }
+    
+            // Reply textarea oluştur
+            const replyArea = document.createElement('div');
+            replyArea.className = 'reply-area';
+            replyArea.innerHTML = `
+                <textarea placeholder="Write your reply..."></textarea>
+                <button class="submit-reply">Submit Reply</button>
+            `;
+    
+            // Eğer zaten bir reply area yoksa ekle
+            if (!post.querySelector('.reply-area')) {
+                post.appendChild(replyArea);
+    
+                // Reply gönderme işlemi
+                replyArea.querySelector('.submit-reply').addEventListener('click', function() {
+                    const replyText = replyArea.querySelector('textarea').value;
+                    if (replyText.trim()) {
+                        addReply(post, replyText);
+                        replyArea.remove();
+                    }
+                });
+            }
+        });
+    });
+    
+    // Kategori butonları işlemleri
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const categoryName = this.parentElement.querySelector('h3').textContent;
+            showAlert(`Loading ${categoryName} topics...`, 'info');
+            
+            // Animasyon efekti
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => this.style.transform = 'scale(1)', 200);
+    
+            // Simüle edilmiş yükleme
+            setTimeout(() => {
+                showTopics(categoryName);
+            }, 1000);
+        });
+    });
+    
+    // Yardımcı fonksiyonlar
+    function showAlert(message, type) {
+        const alert = document.createElement('div');
+        alert.className = `alert alert-${type}`;
+        alert.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out;
+        `;
+    
+        // Alert tiplerine göre renkler
+        const colors = {
+            success: '#2ecc71',
+            error: '#e74c3c',
+            info: '#3498db'
+        };
+        alert.style.backgroundColor = colors[type];
+    
+        alert.textContent = message;
+        document.body.appendChild(alert);
+    
+        // 3 saniye sonra alert'i kaldır
+        setTimeout(() => {
+            alert.style.animation = 'slideOut 0.5s ease-out';
+            setTimeout(() => alert.remove(), 500);
+        }, 3000);
+    }
+    
+    function updateUIAfterLogin(username) {
+        // Login ve register formlarını gizle
+        document.querySelectorAll('.form-container').forEach(form => {
+            form.style.display = 'none';
+        });
+    
+        // Kullanıcı bilgisini göster
+        const userInfo = document.createElement('div');
+        userInfo.className = 'user-info';
+        userInfo.innerHTML = `
+            <h3>Welcome, ${username}!</h3>
+            <button id="logoutBtn">Logout</button>
+        `;
+        document.querySelector('.container').insertBefore(userInfo, document.querySelector('.forum-posts'));
+    
+        // Logout butonu işlemi
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            isLoggedIn = false;
+            userInfo.remove();
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.style.display = 'block';
+            });
+            showAlert('Logged out successfully!', 'info');
+        });
+    }
+    
+    function addReply(post, replyText) {
+        const reply = document.createElement('div');
+        reply.className = 'post-reply';
+        reply.innerHTML = `
+            <p class="reply-author">Reply by: ${document.getElementById('loginUsername').value}</p>
+            <p class="reply-content">${replyText}</p>
+        `;
+        post.appendChild(reply);
+        showAlert('Reply posted successfully!', 'success');
+    }
+    
+    function showTopics(categoryName) {
+        // Simüle edilmiş topic verileri
+        const topics = {
+            'General Discussions': [
+                { title: 'Welcome Thread', author: 'Admin', replies: 15 },
+                { title: 'Forum Rules', author: 'Moderator', replies: 8 },
+            ],
+            'Technology': [
+                { title: 'Latest Tech News', author: 'TechGuru', replies: 25 },
+                { title: 'Programming Tips', author: 'Coder123', replies: 12 },
+            ],
+            'Gaming': [
+                { title: 'Game Reviews', author: 'Gamer', replies: 30 },
+                { title: 'Gaming Events', author: 'EventOrganizer', replies: 18 },
+            ]
+        };
+    
+        const categoryTopics = topics[categoryName.trim()] || [];
+        const topicsContainer = document.createElement('div');
+        topicsContainer.className = 'topics-container';
+        topicsContainer.innerHTML = `
+            <h3>${categoryName} Topics</h3>
+            ${categoryTopics.map(topic => `
+                <div class="topic">
+                    <h4>${topic.title}</h4>
+                    <p>Posted by: ${topic.author}</p>
+                    <p>Replies: ${topic.replies}</p>
+                </div>
+            `).join('')}
+        `;
+    
+        // Varsa eski topics container'ı kaldır
+        const existingTopics = document.querySelector('.topics-container');
+        if (existingTopics) existingTopics.remove();
+    
+        // Yeni topics container'ı ekle
+        document.querySelector('.container').appendChild(topicsContainer);
+    }
+    
+    // CSS Animasyonları
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    
+        .post-reply {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+            border-radius: 5px;
+        }
+    
+        .reply-area {
+            margin: 10px 0;
+        }
+    
+        .reply-area textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+    
+        .topics-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    
+        .topic {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+    
+        .topic:hover {
+            transform: translateX(10px);
+        }
+    
+        .user-info {
+            background-color: white;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    `;
+    document.head.appendChild(style);
+    </script>
+
 
 </body>
 </html>
