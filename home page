@@ -83,7 +83,7 @@
 <body>
     <canvas id="bg"></canvas>
     <div class="card" id="holo-card">
-        HOLOGRAPHIC CARD
+        merhaba giriş için tıklayın
         <div class="button-container">
             <button class="btn btn-yellow">bilgi</button>
             <button class="btn btn-navy">daha fazla bilgi</button>
