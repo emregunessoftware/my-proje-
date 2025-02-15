@@ -1,0 +1,531 @@
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Renk değişkenleri */
+    :root {
+        --navy: #1a2a6c;        /* Lacivert tonları */
+        --gold: #ffd700;        /* Altın sarısı */
+        --white: #ffffff;       /* Beyaz */
+        --light-gray: #f9f9f9;  /* Daha açık gri (okunabilirlik için) */
+        --dark-gray: #222222;   /* Daha koyu gri (daha net görünür) */
+    }
+
+    /* Sayfa genel stili */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern yazı tipi */
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, var(--navy), #2a3a8c);
+        color: var(--dark-gray);      /* Daha koyu yazı rengi */
+        line-height: 1.8;             /* Satır aralığı artırıldı */
+        font-size: 18px;              /* Varsayılan yazı boyutu büyütüldü */
+        min-height: 100vh;
+    }
+
+    /* İçerik kutusu (container) */
+    .container {
+        background: rgba(255, 255, 255, 0.98); /* Daha az şeffaf beyaz arka plan */
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 30px;
+        backdrop-filter: blur(8px);            /* Biraz daha az bulanıklaştırma */
+        color: var(--dark-gray);               /* Kutu içindeki yazılar da koyu gri */
+        font-weight: 500;                      /* Yazı kalınlığı biraz artırıldı */
+    }
+      
+      
+      
+      
+      
+      
+       h1 {
+            color: #1a2a6c;
+        }
+      
+      
+      :root {
+            --navy: #1a2a6c;
+            --gold: #ffd700;
+            --white: #ffffff;
+        }
+
+        /* Sayfa genel stili */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--navy), #2a3a8c);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        
+
+        /* Dil Seçici Butonu */
+        .custom-translate-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .custom-translate-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        /* Dil Seçim Menüsü */
+        .language-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            z-index: 9999;
+        }
+
+        .language-menu a {
+            display: block;
+            padding: 8px 15px;
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .language-menu a:hover {
+            background: #f0f0f0;
+        }
+
+        /* Bayrak İkonları */
+        .flag {
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+      
+     
+
+      
+      
+
+   
+
+     
+
+    /* Başlıklar için okunaklı ayar */
+    h1, h2, h3 {
+        color: var(--navy);                   /* Başlık rengi koyu mavi */
+        font-weight: bold;                    /* Başlıklar daha kalın */
+        line-height: 1.4;                     /* Başlıklarda daha sıkı satır aralığı */
+        margin-bottom: 10px;                  /* Başlıklardan sonra boşluk */
+    }
+
+    /* Paragraflar */
+    p {
+        margin-bottom: 15px;                  /* Paragraflar arasında boşluk */
+        letter-spacing: 0.5px;                /* Harfler arası hafif boşluk */
+    }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        /* Button Styles */
+        .btn-yellow, .btn-navy {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-yellow {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-navy {
+            background: var(--navy);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(26, 42, 108, 0.3);
+        }
+
+        .btn-yellow:hover, .btn-navy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation Buttons */
+        .back-button, .dark-mode-button, .language-toggle-button {
+            background: transparent;
+            border: 2px solid var(--navy);
+            color: var(--navy);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .back-button:hover, .dark-mode-button:hover, .language-toggle-button:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Content Styles */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h2 {
+            color: var(--navy);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin-top: 25px;
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "▹";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background: linear-gradient(135deg, #111827, #1f2937);
+        }
+
+        .dark-mode .container {
+            background: rgba(17, 24, 39, 0.95);
+            color: var(--white);
+        }
+
+        .dark-mode h2 {
+            color: var(--gold);
+        }
+
+        .dark-mode .back-button,
+        .dark-mode .dark-mode-button,
+        .dark-mode .language-toggle-button {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .dark-mode .back-button:hover,
+        .dark-mode .dark-mode-button:hover,
+        .dark-mode .language-toggle-button:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Social Media Icons */
+        .fa-brands {
+            font-size: 1.8rem;
+            color: var(--navy);
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .fa-brands:hover {
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--white);
+            margin-top: auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            animation: fadeIn 0.5s ease-out;
+        }
+      
+      /* Genel Sıfırlama ve Temel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #1c1c1c, #2e2e2e);
+    color: #f5c518;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: all 0.3s ease-in-out; /* Geçiş efektleri için */
+}
+
+/* Cam Efektli Kart */
+#home-page .container {
+    max-width: 850px;
+    width: 100%;
+    margin: 3rem auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#home-page .container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Görsel Stili */
+#home-page img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px solid #f5c518;
+    box-shadow: 0 15px 30px rgba(245, 197, 24, 0.5);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#home-page img:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(245, 197, 24, 0.7);
+}
+
+/* Başlıklar ve Metin */
+#home-page h2.about {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #f5c518;
+    text-shadow: 2px 2px 15px rgba(245, 197, 24, 0.6);
+}
+
+#home-page p.about {
+    font-size: 1.2rem;
+    color: #eee;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Butonlar */
+#home-page .button-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+#home-page .btn-yellow, #home-page .btn-navy {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    min-width: 150px;
+    letter-spacing: 1px;
+}
+
+#home-page .btn-yellow {
+    background: linear-gradient(135deg, #f5c518, #d4a017);
+    color: #0d0d0d;
+    box-shadow: 0 5px 20px rgba(245, 197, 24, 0.4);
+}
+
+#home-page .btn-navy {
+    background: linear-gradient(135deg, #2a2a2a, #121212);
+    color: #f5c518;
+    box-shadow: 0 5px 20px rgba(245, 197, 24, 0.2);
+}
+
+#home-page .btn-yellow:hover, #home-page .btn-navy:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 40px rgba(245, 197, 24, 0.6);
+}
+
+/* Footer */
+#home-page footer {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    color: #f5c518;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid #f5c518;
+    box-shadow: 0 -5px 20px rgba(245, 197, 24, 0.3);
+}
+
+#home-page footer p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    #home-page .container {
+        margin: 2rem 1rem;
+        padding: 2rem;
+    }
+
+    #home-page img {
+        width: 220px;
+        height: 220px;
+    }
+
+    #home-page h2.about {
+        font-size: 2.2rem;
+    }
+
+    #home-page .button-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #home-page .btn-yellow, #home-page .btn-navy {
+        width: 100%;
+    }
+}
+
+      /* Dil Seçici Butonu */
+        .custom-translate {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffd700;
+            color: #1a2a6c;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .custom-translate:hover {
+            background: #1a2a6c;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Dil Seçim Menüsü */
+        .language-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            z-index: 9999;
+        }
+
+        .language-menu a {
+            display: block;
+            padding: 8px 15px;
+            color: #1a2a6c;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .language-menu a:hover {
+            background: #f0f0f0;
+        }
+
+        /* Bayrak İkonları */
+        .flag {
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+      
+   
+      
+      
+      
+    </style>
