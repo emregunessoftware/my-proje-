@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammet TEMEL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+</head>
+      
+<body>
+
+  <!-- Google Translate Butonu -->
+<div id="google_translate_element" class="custom-translate"></div>
+
+<!-- Ana Sayfa -->
+<div id="home-page">
+    <div class="container">
+        <img src="https://i.postimg.cc/ZR88Kycy/emrecanaga2.png" class="about" alt="Emre Güneş">
+        <div class="content">
+            <p class="about">Hoş Geldiniz!</p>
+            <h2 class="about">Merhaba! Ben Emre Güneş</h2>
+            <hr>
+            <div class="button-container">
+                <button class="btn-yellow" onclick="showPage('cv-page')">CV</button>
+                <button class="btn-navy" onclick="showPage('me-page')">Kişisel <br>Bilgiler</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Telefon: +90 539 116 91 99 &nbsp;&nbsp; Email: emrekaaa24@gmail.com</p>
+        <p>&copy; 2025 Emre Güneş</p>
+    </footer>
+</div>
+    <div id="cv-page" style="display: none;">
+        <div class="container">
+            <div class="header">
+                <button class="back-button" onclick="showPage('home-page')"><i class="fa fa-arrow-left"></i></button>
+                <button class="dark-mode-button" onclick="toggleDarkMode()"><i class="fa fa-moon"></i></button>
+                <button class="language-toggle-button" onclick="toggleLanguage()"><i class="fa fa-flag"></i></button>
+
+                <h1>Emre  Güneş</h1>
+                <p>Telefon: +90 539 116 9198 | Email: emrekaaa24@gmail.com | Malatya, Türkiye</p>
+            </div>
+            <div class="main-content">
+                <div class="left-column">
+                    <h2>Eğitim</h2>
+                    <h3>İlköğretim</h3>
+                    <p>Bulanık İlkokulu</p>
+                    <p>Bulanık YBO Ortaokulu</p>
+                    <h3>Ortaöğretim</h3>
+                    <p>Said Nursi Anadolu Lisesi</p>
+                    <h3>Üniversite</h3>
+                    <p>İnönü Üniversitesi Yazılım Mühendisliği</p>
+                    <h2>Diller</h2>
+                    <ul>
+                        <li>Türkçe</li>
+                        <li>İngilizce(b2) </li>
+                        <li></li>
+                    </ul>
+                    <h2>Kişisel Bilgiler</h2>
+                    <ul>
+                        <li>Doğum tarihi: 30.04.2004</li>
+                        <li>Doğum yeri: Muş</li>
+                    </ul>
+                    <h2>Hobiler</h2>
+                    <p>Müzik dinlemek, film izlemek; futbol, voleybol ve basketbol oynamak,
+                         bazı konsol oyunları, belgesel izlemek vs.</p>
+                    <br>
+                    <p>
+                        <a href="https://www.linkedin.com/in/muhammet-temel-47734a2a6/"><i class="fa-brands fa-linkedin"></i></a> &nbsp
+                        <a href="https://www.instagram.com/temeljj/"><i class="fa-brands fa-instagram"></i></a>
+                    </p>
+                </div>
+                <div class="right-column">
+                    <h2>Merhaba</h2>
+                    <p>Merhaba ben Emre Güneş, Aktif olarak Doğu akdeniz Üniversitesi Yazılım Mühendisliği 1. sınıf öğrencisiyim. Daha çok uygulama geliştirme
+                        üzerine bir kariyer planım var. Yaratıcılık konusunda kendimden emin olduğum için şimdilik böyle bir rota belirledim fakat sonrasında karşıma nasıl yollar çıkacağını kestiremiyorum.
+                        Dil olarak orta seviye İngilizce ve ana dilim Türkçe. Hobilerim arasında çoğunlukla film izlemek ve futbol bulunuyor fakat her şeyin dışında 
+                        hayatımın merkezinde müzik olduğunu düşünüyorum.
+                    </p>
+                    <h2>Teknik Beceriler</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                    </ul>
+                    <h2>Projeler</h2>
+                    <ul>
+                        <li>github hesabıma bakabilirsiniz.</li>
+                        <li>yüksek donanımlı forum sitesi (devam ediyor).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kişisel Bilgiler Sayfası -->
+    <div id="me-page" style="display: none;">
+        <div class="container">
+            <div class="header">
+                <button class="back-button" onclick="showPage('home-page')"><i class="fa fa-arrow-left"></i></button>
+                <button class="dark-mode-button" onclick="toggleDarkMode()"><i class="fa fa-moon"></i></button>
+               
+                <h1>Emre Güneş</h1>
+              
+              
+              
+              
+            </div>
+            <div class="main-content">
+                <div>
+                    <h2>Merhaba</h2>
+                    <p>Merhaba ben Emre Güneş, bu kısımda size hobilerim, hoşlandığım şeylerden yer yer de kendimden bahsedeceğim. Keyifli okumalar.</p>
+                    
+                    <h2>Film</h2>
+                    <p>Başlarda daha çok aksiyon ve macera filmleri severdim fakat yaş aldıkça daha çok psikolojik ve felsefik filmler daha çok hoşuma gitmeye başladı.</p>
+                    <ul>
+                        <h3>En sevdiğim yönetmenler</h3>
+                        <li>Martin Scorsese</li>
+                        <li>Quentin Tarantino</li>
+                        <li>David Fincher</li>
+                        <li>Wes Anderson</li>
+                    </ul>
+                    <ul>
+                        <h3>Sevdiğim Bazı filmler</h3>
+                        <li>avengers endgame</li>
+                        <li>rambo</li>
+                        <li>yıldızlar arası</li>
+                        <li>örümcek adam</li>
+                      
+                    </ul>
+
+                    <h2>Müzik</h2>
+                    <p>Tür olarak takıntım yoktur her şeyi dinleyebilirim, kim söylemiş veya hangi gruba mensup pek de önemli değil.</p>
+                    <ul>
+                        <h3>Sevdiğim Bazı Sanatçılar ve Müzik Grupları</h3>
+                        <li>Queen</li>
+                        <li>The Beatles</li>
+                        <li>Sezen Aksu</li>
+                        <li>Mor ve Ötesi</li>
+                        <li>Vega</li>
+                        <li>Ludwig van Beethoven</li>
+                        <li>Wolfgang Amadeus Mozart</li>
+                        <li>Frédéric Chopin</li>
+                        <li>Ati242</li>
+                    </ul>
+                    <ul>
+                        <h3>Şarkılar</h3>
+                        <li><a href="https://youtu.be/Lw4unI3tVNQ?si=ANpmhZBm4vrklSX6" style="font-size:medium">Cambaz</a></li>
+                        <li><a href="https://youtu.be/4Tr0otuiQuU?si=f5Knh9KLjxGRq4j_" style="font-size:medium">Moonlight Sonata</a></li>
+                        <li><a href="https://youtu.be/qEwD-og1tac?si=8pIcmQNg7_G1VWkc" style="font-size:medium">Bozgun</a></li>
+                        <li><a href="https://youtu.be/88ueo871zYo?si=3-UGkq2T82cqqEt-" style="font-size:medium">Ankara</a></li>
+                        <li><a href="https://youtu.be/TSpiwK5fig0?si=xVDnX5Sy1DmQpIf0" style="font-size:medium">All My Loving</a></li>
+                        <li><a href="https://youtu.be/hBPUundF1dA?si=PUkCh-YtZPew3KjW" style="font-size:medium">An der schonen blauen Donau</a></li>
+                    </ul>
+
+                    <h2>Futbol</h2>
+                    <p>Futbol çocukluktan beri peşinde koşturduğumuz; oynamayı, izlemeyi, üzerine konuşmayı yer yer tartışmayı sevdiğimiz yeri gelince içimizi
+                        pırpır eden yeri gelince bütün haftamızı berbat eden biraz da toksik ilişki içinde olduğumuz bir tutkudur bizim için.</p>
+                    <p>Yurt dışından da sevdiğim bazı takımlar var. Liverpool özellikle tarftarıyla ve tribünleriyle beni cezbetmiştir.
+                        Real madrid asilliği ve büyüklüğü ile gönlümüzde yer edninmiştir.</p>
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy; 2025 Emre Güneş</p>
+            </div>
+        </div>
+    </div>
+</body>
+    <div class="overlay" id="overlay"></div>
