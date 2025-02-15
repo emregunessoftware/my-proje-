@@ -80,6 +80,60 @@
                     this.style.transform = 'scale(1)';
                 }, 200);
             });
+
+
+
+
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'tr',
+            includedLanguages: 'tr,en,es,fr,de,it,ru,zh-CN,ja,pt',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+    // Sayfa Geçiş Fonksiyonu (Örnek)
+    function showPage(pageId) {
+        alert("Bu kısım henüz aktif değil: " + pageId);
+    }
+</script>
+
+<!-- Custom Dil Seçici Butonu (Google Translate işlevi) -->
+<script>
+    // Google Translate butonunun gösterimi için özel CSS
+    document.getElementById('google_translate_element').style.position = "fixed";
+    document.getElementById('google_translate_element').style.top = "20px";
+    document.getElementById('google_translate_element').style.right = "20px";
+    document.getElementById('google_translate_element').style.backgroundColor = "#FFD700";
+    document.getElementById('google_translate_element').style.padding = "10px 20px";
+    document.getElementById('google_translate_element').style.borderRadius = "50px";
+    document.getElementById('google_translate_element').style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
+    document.getElementById('google_translate_element').style.cursor = "pointer";
+    document.getElementById('google_translate_element').style.transition = "all 0.3s ease";
+    document.getElementById('google_translate_element').style.zIndex = "9999";
+    
+    // Hover efekti
+    document.getElementById('google_translate_element').onmouseover = function() {
+        this.style.transform = "scale(1.1)";
+        this.style.backgroundColor = "#1a2a6c";
+        this.style.color = "#fff";
+    }
+    document.getElementById('google_translate_element').onmouseout = function() {
+        this.style.transform = "scale(1)";
+        this.style.backgroundColor = "#FFD700";
+        this.style.color = "#1a2a6c";
+    }
+</script>
+
+
+
         });
      
 
